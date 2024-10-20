@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,10 +73,10 @@ export default function Home() {
           {/* Left: Text Section */}
           <div className="flex-1 flex flex-col justify-center px-6 lg:px-24 py-12">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-purple-500">
-              Hi, I’m Anum Ahtesham <span role="img" aria-label="wave">👋</span>
+              Hi, I&rsquo;m Anum Ahtesham <span role="img" aria-label="wave">👋</span>
             </h2>
             <p className="text-lg text-gray-400 mb-6">
-              I design and develop experiences that make people's lives simpler through web and mobile apps.
+              I design and develop experiences that make people&rsquo;s lives simpler through web and mobile apps.
             </p>
             <Link href="#contact">
               <button className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-500">
@@ -85,11 +86,14 @@ export default function Home() {
           </div>
 
           {/* Right: Profile Image Section */}
-<div className="flex-1 flex justify-center items-center">
-  <img
+          <div className="flex-1 flex justify-center items-center">
+  <Image
     src="/profile2.jpg"
     alt="Anum, Front-end Developer"
     className="w-full max-w-xs h-auto rounded-lg shadow-lg border-4 border-purple-600 -mt-24 opacity-0 animate-fadeIn transition-transform duration-500 ease-in-out transform hover:scale-105"
+    width={300}  // set an appropriate width
+    height={300} // set an appropriate height
+    priority    // optional: use this if you want to prioritize loading this image
   />
 </div>
 
